@@ -88,7 +88,7 @@ public class LocalDateTimeUtils {
                 if (Pattern.compile("[S]{1,2}").matcher(fraction).matches()) {
                     // 将yyyyMMddHHmmssS、yyyyMMddHHmmssSS的日期统一替换为yyyyMMddHHmmssSSS格式，用0补
                     for (int i = 0; i < 3 - fraction.length(); i++) {
-                        text += "0";
+                        text = text + "0";
                     }
                 }
                 formatter = new DateTimeFormatterBuilder().appendPattern(PURE_DATETIME_PATTERN)
